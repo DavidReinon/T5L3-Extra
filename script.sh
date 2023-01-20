@@ -117,6 +117,7 @@ if [[ $numero =~ $es_numero ]]; then
 
         echo "Numero decimal: ${unoPorUno[*]}"
         echo "Numero romano: ${total[*]}"
+        #se ha intentado ;(
     else
         echo "El numero introducio esta fuera de rango. Debe de estar entre 1 y 1999."
     fi
