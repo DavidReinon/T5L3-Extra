@@ -8,13 +8,13 @@ tamanyo=$((tamanyo - 1)) #tamanyo=numero de caracteres.
 max=$((tamanyo - 1))     #ultimo elemento del string
 
 if [[ $numero =~ $es_numero ]]; then
+
     if [ $numero -ge 1 -a $numero -le 1999 ]; then
-        for i in seq $(0 $max); do
+        for i in $(seq 0 $max); do
             unoPorUno[i]=${numero:$i:1}
         done
 
         case $unoPorUno[0] in
-        # metodo coneversion / devuelve solucion
         0) ;;
 
         1)
@@ -23,7 +23,6 @@ if [[ $numero =~ $es_numero ]]; then
         esac
 
         case $unoPorUno[1] in
-        # metodo coneversion / devuelve solucion
         0) ;;
         1)
             $total[1]="C"
@@ -55,7 +54,6 @@ if [[ $numero =~ $es_numero ]]; then
         esac
 
         case $unoPorUno[2] in
-        # metodo coneversion / devuelve solucion
         0) ;;
         1)
             $total[2]="X"
@@ -87,7 +85,6 @@ if [[ $numero =~ $es_numero ]]; then
         esac
 
         case $unoPorUno[3] in
-        # metodo coneversion / devuelve solucion
         0) ;;
         1)
             $total[3]="I"
@@ -117,12 +114,16 @@ if [[ $numero =~ $es_numero ]]; then
             $total[3]="IX"
             ;;
         esac
+
+        echo "Numero decimal: ${unoPorUno[*]}"
+        echo "Numero romano: ${total[*]}"
     else
         echo "El numero introducio esta fuera de rango. Debe de estar entre 1 y 1999."
     fi
 else
     if [[ $numero =~ $es_romano ]]; then
-        echo "funciona perfe"
+        echo "Numero romano"
+        #Funcionalidad no realizada
     else
         echo "Numero no identificado. Debe se numero decimal o romano."
     fi
